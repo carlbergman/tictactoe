@@ -1,9 +1,43 @@
 /**
+ * Typography
+ */
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+#page {
+	max-width: 400px;
+	margin: 0 auto;
+	position: relative;
+}
+.restart {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 10px;
+	text-transform: uppercase;
+	background: #eee;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: inline-block;
+	text-decoration: none;
+	color: #444;
+	font-size: 0.875em;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+}
+.restart:hover,
+.restart:active,
+.restart:focus {
+	background: #fff;
+}
+
+/**
  * Board design
  */
 #board {
-	width: 50vh;
-	height: 50vh;
+	display: block;
+	width: 100%;
+	height: 400px;
+	margin: 20px 0;
 }
 .cell {
 	position: relative;

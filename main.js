@@ -1,9 +1,15 @@
-$(function() {
+(function ($) {
 	'use strict';
 
-	/**
-	 * Initiate Tic tac toe
-	 */
-	new Tictactoe(3);
+	// Document ready
+	$(function() {
 
-});
+		/**
+		 * Initiate Tic tac toe
+		 */
+		//var game = new Tictactoe(3);
+		$('#board').Tictactoe(3);
+
+	});
+
+}(jQuery));
