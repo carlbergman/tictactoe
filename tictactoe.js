@@ -85,6 +85,10 @@
 				}
 			}
 
+			// Add a wrapper for info text
+			this.infoText = $('<h2 class="info"></h2>');
+			this.board.after(this.infoText);
+
 	    },
 
 	    /**
@@ -195,6 +199,9 @@
 	    		this.board.addClass('turn-x').removeClass('turn-o');
 	    	}
 	    	
+			// Update info text
+	    	this.infoText.html('Nu är det <span class="symbol-' + this.turn + '">' + this.turn + '</span> tur.');
+
 	    	// Update turn counter
 	    	this.turns++;
 
@@ -209,7 +216,7 @@
 	     * Someone won this game
 	     */
 	    win: function () {
-	    	this.board.after('<h2 id="win">Spelare <span class="win-' + this.turn + '">' + this.turn + '</span> har vunnit! Grattis!</h2>');
+	    	this.infoText.html('Spelare <span class="symbol-' + this.turn + '">' + this.turn + '</span> har vunnit! Grattis!');
 	    	this.disableButtons();
 	    },
 
@@ -217,7 +224,7 @@
 	     * This game was a tie
 	     */
 	    tie: function () {
-	    	this.board.after('<h2 id="tie">Matchen blev lika.</h2>');
+	    	this.infoText.html('Matchen blev lika.');
 	    	this.disableButtons();
 	    },
 

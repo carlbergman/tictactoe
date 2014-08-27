@@ -53,10 +53,10 @@ body {
 .cell[disabled=disabled] {
 	cursor: inherit;
 }
-.win-o {
+.symbol-o {
 	color: #00f;
 }
-.win-x {
+.symbol-x {
 	color: #f00;
 }
 
