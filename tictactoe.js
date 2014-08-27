@@ -73,7 +73,7 @@
 								self.add($(this).data('row'), $(this).data('col'), self.turn);
 								$(this).attr('disabled', 'disabled').addClass('show-' + self.turn);
 								
-								// Check for 
+								// Check for win or pass the turn.
 								if (self.check(self.turn)) {
 									self.win();
 								} else {
@@ -155,12 +155,7 @@
 
 	    		}
 
-	    		if (hor == this.grid.length) {
-	    			win = true;
-	    			break;
-	    		} 
-
-	    		if (ver == this.grid.length) {
+	    		if (hor == this.grid.length || ver == this.grid.length) {
 	    			win = true;
 	    			break;
 	    		}
@@ -178,12 +173,8 @@
 
 	    	}
 
-	    	if (tl == this.grid.length) {
+	    	if (tl == this.grid.length || tr == this.grid.length) {
 	    		win = true;
-			} 
-
-			if (tr == this.grid.length) {
-				win = true;
 			}
 
 			return win;
@@ -239,6 +230,9 @@
 
 	};
 
+	/**
+	 * Add this class as a method for jQuery objects
+	 */
 	$.fn.Tictactoe = function (size) {
 		var game = new Tictactoe($(this), size);
 	};

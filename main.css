@@ -53,6 +53,12 @@ body {
 .cell[disabled=disabled] {
 	cursor: inherit;
 }
+.win-o {
+	color: #00f;
+}
+.win-x {
+	color: #f00;
+}
 
 /**
  * Symbol visibility
