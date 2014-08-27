@@ -1,0 +1,81 @@
+/**
+ * Board design
+ */
+#board {
+	width: 50vh;
+	height: 50vh;
+}
+.cell {
+	position: relative;
+	box-sizing: border-box;
+	display: block;
+	width: 33.33%;
+	height: 33.33%;
+	background: #eee;
+	border: 5px solid #ccc;
+	float: left;
+	cursor: pointer;
+}
+.cell[disabled=disabled] {
+	cursor: inherit;
+}
+
+/**
+ * Symbol visibility
+ */
+.cell .o,
+.cell .x {
+	display: none;
+}
+.show-x .x,
+.show-o .o {
+	display: block;
+}
+.turn-o .cell:hover:enabled .o,
+.turn-o .cell:active:enabled .o,
+.turn-x .cell:hover:enabled .x,
+.turn-x .cell:active:enabled .x {
+	display: block;
+	opacity: 0.5;
+}
+
+/**
+ * Symbols
+ */
+.o {
+	position: absolute;
+	top: 0.3em;
+	bottom: 0.3em;
+	left: 0.3em;
+	right: 0.3em;
+	display: block;
+	text-indent: -9999px;
+	border: 1em solid #00f;
+	border-radius: 50%;
+}
+.x {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	text-indent: -9999px;
+}
+.x:before,
+.x:after {
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	content: "a";
+	height: 1em;
+	margin-top: -0.5em;
+	width: 100%;
+	background: #f00;
+	transform: rotate(45deg);
+}
+.x:after {
+	transform: rotate(-45deg);	
+}
